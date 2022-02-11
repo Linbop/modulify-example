@@ -1,0 +1,19 @@
+services:
+  bff:
+    build:
+      dockerfile: ./repositories/project-rest/Dockerfile
+      context: ../../
+    volumes:
+      - ../../repositories/project-rest/src:/service/repositories/project-rest/src
+    ports:
+      - 3001:3001
+    environment:
+      - ENV=LOCAL
+  project-grpc:
+    build:
+      dockerfile: ./repositories/project-grpc/Dockerfile
+      context: ../../
+    volumes:
+      - ../../repositories/project-grpc/src:/service/repositories/project-grpc/src
+    environment:
+      - ENV=LOCAL

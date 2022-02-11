@@ -1,0 +1,19 @@
+{
+  "name": "@linbop/project-grpc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node16 --outfile=build/server.js --external:@linbop/proto",
+    "start": "node ./build/server.js",
+    "watch": "yarn run build --watch",
+    "watch:start": "concurrently \"yarn run watch\" \"wait-on build/server.js && nodemon build/server.js\""
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.4",
+    "@grpc/proto-loader": "^0.6.9"
+  }
+}

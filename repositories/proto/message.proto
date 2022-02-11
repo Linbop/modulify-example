@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message Message {
+    string title = 1;
+    string content = 2;
+}
+
+service MessageService {
+    rpc GetMessage (Empty) returns (Message) {}
+}
+
+message Empty {}
