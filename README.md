@@ -6,26 +6,39 @@ These projects has common files such as proto files or TS types.
 We will setup modulify scripts and docker-compose to up and run all services in local environment.
 
 1. Clone the project `git clone https://github.com/Linbop/modulify-example.git`
+
 2. Run `yarn install` command for the root and repo projects.
+
 ```
 yarn
+```
 
+```
 cd repositories/project-rest && yarn
+```
 
+```
 cd repositories/project-grpc && yarn
 ```
+
 3. Run docker compose command
+
+
 ```
 docker-compose -f ./deploy/configs/docker-compose.yml up --build
 ```
-4.After the gRPC service has started, open `http://localhost:3001` on browser.
+
+4. After the gRPC service has started, open `http://localhost:3001` on browser.
+
 5. You should see the following response
+
 ```
 {
   "title": "Message",
   "content": "Lorem ipsum dolor sit amet"
 }
 ```
+
 6. Now you can change ENV=LOCAL variable in docker-compose file, and up again. You will see that, services will be started without nodemon and --watch option.
 
 The example of the start function:
