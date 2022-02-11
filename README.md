@@ -9,22 +9,22 @@ We will setup modulify scripts and docker-compose to up and run all services in 
 
 2. Run `yarn install` command for the root and repo projects.
 
-```
+```bash
 yarn
 ```
 
-```
+```bash
 cd repositories/project-rest && yarn
 ```
 
-```
+```bash
 cd repositories/project-grpc && yarn
 ```
 
 3. Run docker compose command
 
 
-```
+```bash
 docker-compose -f ./deploy/configs/docker-compose.yml up --build
 ```
 
@@ -32,7 +32,7 @@ docker-compose -f ./deploy/configs/docker-compose.yml up --build
 
 5. You should see the following response
 
-```
+```javascript
 {
   "title": "Message",
   "content": "Lorem ipsum dolor sit amet"
